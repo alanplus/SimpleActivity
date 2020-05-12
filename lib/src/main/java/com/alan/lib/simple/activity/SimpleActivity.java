@@ -21,6 +21,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onCreate(this);
         }
@@ -30,6 +31,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onStart(this);
         }
@@ -38,6 +40,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onResume(this);
         }
@@ -46,6 +49,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onPause(this);
         }
@@ -54,6 +58,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onStop(this);
         }
@@ -62,8 +67,13 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onDestroy(this);
         }
+    }
+
+    public IActivity getIActivity() {
+        return iActivity;
     }
 }
