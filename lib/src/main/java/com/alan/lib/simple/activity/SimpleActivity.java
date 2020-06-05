@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class SimpleActivity extends AppCompatActivity {
 
-    private static IActivity iActivity;
+    protected static IActivity iActivity;
 
 
     public static void register(IActivity iActivity) {
@@ -30,6 +30,7 @@ public class SimpleActivity extends AppCompatActivity {
     @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
+        IActivity iActivity = getIActivity();
         if (null != iActivity) {
             iActivity.onInflaterFinish(this);
         }
