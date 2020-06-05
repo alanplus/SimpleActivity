@@ -20,4 +20,6 @@ public interface IActivity {
     void onStop(Activity activity);
 
     void onDestroy(Activity activity);
+
+    void onInflaterFinish();
 }

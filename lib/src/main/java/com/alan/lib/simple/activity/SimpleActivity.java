@@ -27,6 +27,13 @@ public class SimpleActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        if (null != iActivity) {
+            iActivity.onInflaterFinish();
+        }
+    }
 
     @Override
     protected void onStart() {
