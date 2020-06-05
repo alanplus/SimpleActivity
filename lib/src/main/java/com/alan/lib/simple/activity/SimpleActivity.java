@@ -31,7 +31,7 @@ public class SimpleActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
         if (null != iActivity) {
-            iActivity.onInflaterFinish();
+            iActivity.onInflaterFinish(this);
         }
     }
 

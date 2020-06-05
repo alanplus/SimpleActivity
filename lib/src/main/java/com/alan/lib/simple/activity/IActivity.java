@@ -21,5 +21,5 @@ public interface IActivity {
 
     void onDestroy(Activity activity);
 
-    void onInflaterFinish();
+    void onInflaterFinish(Activity activity);
 }
